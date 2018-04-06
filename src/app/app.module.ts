@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { PruebasriComponent } from './pruebasri/pruebasri.component';
+import { FormulariocedulaComponent } from './formulariocedula/formulariocedula.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PruebasriComponent
+    FormulariocedulaComponent
   ],
   imports: [
     BrowserModule
