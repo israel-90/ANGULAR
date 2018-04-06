@@ -1,3 +1,19 @@
-<p>
-  formulariocedula works!
-</p>
+<form [formGroup]="formValidador" (ngSubmit)="onSubmit()" novalidate>
+  <label for="campoRuc">Cédula o Ruc: </label>
+  <input type="text" id="campoRuc" formControlName="campoRuc" />
+  <br>
+  <button type="submit" >Validar</button>
+  <br>
+  <div *ngIf="formValidador.controls['campoRuc'].hasError('required')  && formValidador.controls['campoRuc'].touched">
+    El campo Cédula es requerido
+  </div>
+  <div *ngIf="formValidador.controls['campoRuc'].hasError('minlength')">
+    El campo Cédula necesita como mínimo 10 dígitos
+  </div>
+  <div *ngIf="formValidador.controls['campoRuc'].hasError('maxlength')">
+    El campo Cédula necesita como máximo 10 dígitos
+  </div>
+  <!-- <pre>Valor del formulario: {{formValidador.value|json}}</pre>
+  <pre>Estado del formulario: {{formValidador.status|json}}</pre>
+  <pre>Ruc: {{campoRuc|json}}</pre> -->
+</form>
